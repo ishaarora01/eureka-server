@@ -14,26 +14,25 @@ pipeline {
 //                 sh 'mvn -B -DskipTests clean package'
 //             }
 //         }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                    cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
-                }
-            }
-        }
-//         stage('Coverage') {
+//         stage('Test') {
 //             steps {
-//                 sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
+//                 sh 'mvn test'
 //             }
+//             post {
+//                 always {
+//                     junit 'target/surefire-reports/*.xml'
+//                 }
+//             }
+//         }
+        stage('Coverage') {
+            steps {
+                sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
+            }
 //             post {
 //               always {
 //                 cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
 //                 }
 //             }
-//         }
+        }
     }
 }
