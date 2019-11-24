@@ -9,9 +9,6 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-    stage ("Extract test results") {
-        cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
-    }
 //         stage('Build') {
 //             steps {
 //                 sh 'mvn -B -DskipTests clean package'
@@ -27,15 +24,15 @@ pipeline {
 //                 }
 //             }
 //         }
-//         stage('Coverage') {
+        stage('Coverage') {
 //             steps {
 //                 sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
 //             }
-//             post {
-//               always {
-//                 cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
-//                 }
-//             }
-//         }
+            post {
+              always {
+                cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
+                }
+            }
+        }
     }
 }
