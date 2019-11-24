@@ -28,11 +28,11 @@ pipeline {
             steps {
                 sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
             }
-//             post {
-//               always {
-//                 cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
-//                 }
-//             }
+            post {
+              always {
+                  coberturaReportFile: 'target/site/cobertura/coverage.xml'
+                }
+            }
         }
     }
 }
