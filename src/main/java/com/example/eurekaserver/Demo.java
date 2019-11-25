@@ -8,4 +8,8 @@ public class Demo {
     public String hello(){
         return "hi1";
     }
+
+    public int getNum(){
+        return 1;
+    }
 }

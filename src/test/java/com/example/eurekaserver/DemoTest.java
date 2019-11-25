@@ -17,4 +17,9 @@ public class DemoTest {
     public void hello(){
         Assert.assertEquals("hi1", demo.hello());
     }
+
+    @Test
+    public void getNum(){
+        Assert.assertEquals(1, demo.getNum());
+    }
 }
