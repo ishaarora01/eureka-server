@@ -14,5 +14,9 @@ public class EurekaServerApplicationTests {
 	public void contextLoads() {
 	}
 
-	
+	@Test
+	public void test(){
+		Assert.assertEquals("hi", "hi");
+	}
+
 }
