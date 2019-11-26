@@ -12,4 +12,8 @@ public class Demo {
     public int getNum(){
         return 1;
     }
+
+    public String hi(){
+        return "hello";
+    }
 }

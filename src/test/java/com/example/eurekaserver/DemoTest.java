@@ -22,4 +22,10 @@ public class DemoTest {
     public void getNum(){
         Assert.assertEquals(1, demo.getNum());
     }
+
+    @Test
+    public void getHi(){
+        Assert.assertEquals("hello", demo.hi());
+    }
+
 }
